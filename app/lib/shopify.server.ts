@@ -365,12 +365,10 @@ function previewModeAdminResult(): AdminAuthResult {
   const now = Math.floor(Date.now() / 1000);
   return {
     session: {
-      id: "preview|" + PREVIEW_SHOP_DOMAIN,
       shop: PREVIEW_SHOP_DOMAIN,
-      state: "preview-mode",
-      isOnline: false,
       accessToken: "preview-mode-no-real-token",
       scope: "preview",
+      storedAt: now * 1000,
     },
     sessionToken: {
       iss: "https://" + PREVIEW_SHOP_DOMAIN + "/admin",

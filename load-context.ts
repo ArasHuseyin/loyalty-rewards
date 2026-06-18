@@ -28,6 +28,12 @@ export interface Env {
   // Cloudflare KV namespace for the GDPR audit log. Bind separately so
   // session secrets and compliance records have isolated retention policies.
   GDPR_AUDIT?: KVNamespace;
+  // Cloudflare KV namespace for Loyalty Rewards data — program settings,
+  // per-customer point balances, and per-shop aggregate stats. When unbound
+  // (local dev / preview), app/lib/loyalty.server.ts falls back to an
+  // in-memory map so the app still boots; bind in production so balances
+  // persist across Worker restarts. Add the matching block to wrangler.toml.
+  LOYALTY?: KVNamespace;
   // Phase 3.8 B + D — outbound link to AppApprove for QA feedback +
   // event ingest. Both are pushed by the AppApprove deploy pipeline at
   // provisioning time (mirroring APPAPPROVE_DEPLOY_SECRET from the

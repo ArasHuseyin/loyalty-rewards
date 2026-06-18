@@ -16,6 +16,8 @@ const config: AppApproveConfig = {
     "customers/redact": "~/webhooks/customers-redact",
     "shop/redact": "~/webhooks/shop-redact",
     "app_subscriptions/update": "~/webhooks/app-subscriptions-update",
+    // Loyalty Rewards — credit points when an order is created.
+    "orders/create": "~/webhooks/orders-create",
   },
   crons: {
     // CF Cron Trigger schedules. The example handler runs hourly.

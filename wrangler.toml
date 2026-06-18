@@ -43,6 +43,15 @@ directory = "./build/client"
 APPAPPROVE_PROJECT_SLUG = "loyalty-rewards"
 SCOPES = "read_products,read_orders,read_customers"
 
+# Loyalty Rewards data store. AppApprove provisions the SESSIONS +
+# GDPR_AUDIT namespaces automatically; bind LOYALTY here (or via the
+# AppApprove dashboard) so point balances + program settings persist in
+# production. Until it's bound, app/lib/loyalty.server.ts uses an
+# in-memory fallback (data is lost on Worker restart).
+# [[kv_namespaces]]
+# binding = "LOYALTY"
+# id = "<your KV namespace id>"
+
 # CF Cron Triggers — uncomment + add schedules here, then mirror them in
 # appapprove.config.ts `crons` so the dispatcher knows which handler to
 # call. AppApprove's deploy pipeline diffs the two and warns on drift.

@@ -39,6 +39,11 @@ api_version = "2026-01"
   topics = [ "app_subscriptions/update" ]
   uri = "/webhooks/app_subscriptions/update"
 
+  # Loyalty Rewards — earn points on every purchase. Requires read_orders.
+  [[webhooks.subscriptions]]
+  topics = [ "orders/create" ]
+  uri = "/webhooks/orders/create"
+
 [pos]
 embedded = false
 

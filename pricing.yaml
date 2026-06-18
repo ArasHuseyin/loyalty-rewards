@@ -14,16 +14,26 @@ currency: USD
 plans:
   - name: Free
     price: 0
+    features:
+      - Up to 250 loyalty members
+      - Earn points on every purchase
 
+  # Loyalty Rewards recurring plan — $29/month with a 7-day free trial.
   - name: Pro
     interval: monthly
     price: 29
     trial_days: 7
+    features:
+      - Unlimited loyalty members
+      - Earn points on every purchase
+      - Redeem points at checkout
+      - Customer-facing rewards page
 
   - name: Enterprise
     interval: monthly
     price: 199
     trial_days: 14
     features:
+      - Everything in Pro
       - Custom integrations
       - Priority support
